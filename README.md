@@ -19,29 +19,17 @@ A modern, feature-rich chat widget component for React applications with support
 npm install @glitchbytez/rasa-chat-widget
 ```
 
-## ⚠️ Important: CSS Import Required
-
-**Always import the CSS file for proper styling:**
-
-```jsx
-// Add this import to your root component or index.js
-import '@glitchbytez/rasa-chat-widget/dist/index.css';
-```
-
 ## Quick Start
 
 ```jsx
 import React from 'react';
 import { ChatWidgetProvider } from '@glitchbytez/rasa-chat-widget';
 
-// Import the CSS - Required for styling!
-import '@glitchbytez/rasa-chat-widget/dist/index.css';
-
 function App() {
   return (
     <div>
       <h1>My App</h1>
-      {/* Chat widget will appear as a floating button */}
+      {/* Chat widget will appear as a floating button - styling included automatically! */}
       <ChatWidgetProvider />
     </div>
   );

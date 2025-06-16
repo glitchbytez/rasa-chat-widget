@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0] - 2024-01-XX
+
+### 🚀 Major Developer Experience Improvement
+- **Automatic CSS Injection**: CSS is now automatically bundled and injected into the JavaScript
+- **No Manual CSS Import Required**: Developers no longer need to manually import CSS files
+- Component styling works immediately upon import with zero configuration
+
+### 🔧 Technical Changes
+- Updated Rollup configuration to inject CSS instead of extracting it
+- CSS is now embedded directly into the JavaScript bundle
+- Automatic DOM style injection when component is loaded
+- Reduced friction for developers using the package
+
+### 📚 Documentation
+- Updated README.md to remove CSS import requirements
+- Updated USAGE.md with simplified installation instructions
+- Added automatic styling information to documentation
+
 ## [1.1.0] - 2024-01-XX
 
 ### 🎨 Fixed

@@ -39,7 +39,7 @@ export default {
     }),
     commonjs(),
     postcss({
-      extract: true,
+      inject: true,
       minimize: true,
       config: {
         path: './postcss.config.js'
