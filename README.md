@@ -1,6 +1,6 @@
-# React Chat Widget
+# Rasa Chat Widget
 
-A modern, feature-rich chat widget component for React applications with support for bot and live agent interactions.
+A modern, feature-rich chat widget component for React applications with support for Rasa bot and live agent interactions.
 
 ## Features
 
@@ -16,14 +16,14 @@ A modern, feature-rich chat widget component for React applications with support
 ## Installation
 
 ```bash
-npm install @your-org/react-chat-widget
+npm install @glitchbytez/rasa-chat-widget
 ```
 
 ## Quick Start
 
 ```jsx
 import React from 'react';
-import ChatWidgetProvider from '@your-org/react-chat-widget';
+import { ChatWidgetProvider } from '@glitchbytez/rasa-chat-widget';
 
 function App() {
   return (
@@ -43,7 +43,7 @@ export default App;
 ### Basic Configuration
 
 ```jsx
-import ChatWidgetProvider from '@your-org/react-chat-widget';
+import { ChatWidgetProvider } from '@glitchbytez/rasa-chat-widget';
 
 function App() {
   const socketConfig = {
@@ -67,7 +67,7 @@ function App() {
 ### Advanced Configuration
 
 ```jsx
-import { ChatWidgetProvider, SocketProvider } from '@your-org/react-chat-widget';
+import { ChatWidgetProvider, SocketProvider } from '@glitchbytez/rasa-chat-widget';
 
 function App() {
   return (
@@ -132,7 +132,7 @@ import {
   SocketProvider, 
   useChatStore, 
   useSocket 
-} from '@your-org/react-chat-widget';
+} from '@glitchbytez/rasa-chat-widget';
 
 function MyCustomChatApp() {
   const { messages, isOpen, toggleWidget } = useChatStore();
@@ -265,7 +265,7 @@ store.submitFeedback();
 The package includes TypeScript definitions. For better type safety:
 
 ```typescript
-import { ChatWidgetProvider, SocketConfig } from '@your-org/react-chat-widget';
+import { ChatWidgetProvider, SocketConfig } from '@glitchbytez/rasa-chat-widget';
 
 interface MyAppProps {
   chatConfig: SocketConfig;
@@ -326,7 +326,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Support
 
-For support, email support@yourorg.com or create an issue on GitHub.
+For support, create an issue on GitHub at https://github.com/glitchbytez/rasa-chat-widget/issues
 
 ## Changelog
 
