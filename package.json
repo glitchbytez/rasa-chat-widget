@@ -1,6 +1,6 @@
 {
   "name": "@glitchbytez/rasa-chat-widget",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A customizable React chat widget component with Rasa and Socket.IO integration",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -9,12 +9,15 @@
     "dist",
     "README.md",
     "USAGE.md",
-    "DEPLOYMENT.md"
+    "DEPLOYMENT.md",
+    "CHANGELOG.md"
   ],
   "scripts": {
     "build": "rollup -c",
+    "postbuild": "node -e \"require('fs').copyFileSync('src/index.d.ts', 'dist/index.d.ts')\"",
+    "prebuild": "node -e \"try{require('fs').rmSync('dist',{recursive:true})}catch(e){}\"",
     "prepublishOnly": "npm run build",
-    "clean": "rm -rf dist"
+    "test": "echo \"No tests yet\" && exit 0"
   },
   "keywords": [
     "react",

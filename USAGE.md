@@ -8,6 +8,13 @@ npm install @glitchbytez/rasa-chat-widget
 
 ## Basic Usage
 
+**⚠️ Important: Always import the CSS file to ensure proper styling:**
+
+```jsx
+// Import the CSS - This is required for proper styling!
+import '@glitchbytez/rasa-chat-widget/dist/index.css';
+```
+
 ### Option 1: Using ChatWidgetProvider (Recommended)
 
 The `ChatWidgetProvider` is a complete, standalone component that includes all necessary context providers.
@@ -15,6 +22,9 @@ The `ChatWidgetProvider` is a complete, standalone component that includes all n
 ```jsx
 import React from 'react';
 import { ChatWidgetProvider } from '@glitchbytez/rasa-chat-widget';
+
+// Import the CSS - Required!
+import '@glitchbytez/rasa-chat-widget/dist/index.css';
 
 function App() {
   const socketConfig = {
@@ -50,6 +60,9 @@ If you need more control or want to integrate with existing socket connections:
 ```jsx
 import React from 'react';
 import { SocketProvider, ChatWidget } from '@glitchbytez/rasa-chat-widget';
+
+// Import the CSS - Required!
+import '@glitchbytez/rasa-chat-widget/dist/index.css';
 
 function App() {
   const socketConfig = {
@@ -143,7 +156,23 @@ function CustomChatComponent() {
 
 ## Styling
 
-The component includes default CSS styles. If you need to customize the appearance, you can override the CSS classes or provide your own styles.
+**CSS Import Required:** The component requires CSS to be imported for proper styling. The package includes compiled Tailwind CSS with all necessary utility classes.
+
+```jsx
+// Always include this import in your root component or index.js
+import '@glitchbytez/rasa-chat-widget/dist/index.css';
+```
+
+The included CSS provides:
+- Complete Tailwind CSS utilities for the chat widget
+- Custom scrollbar styling
+- Typing indicator animations
+- Responsive design classes
+
+If you need to customize the appearance further, you can:
+1. Override specific CSS classes in your own stylesheet (import after the package CSS)
+2. Use CSS-in-JS solutions to modify component styling
+3. Create custom themes by overriding CSS custom properties
 
 ## Requirements
 

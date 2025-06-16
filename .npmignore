@@ -2,6 +2,13 @@
 src/
 .babelrc
 rollup.config.mjs
+tailwind.config.js
+postcss.config.js
+
+# Development and backup files
+*.backup
+*.css.backup
+PRE_DEPLOYMENT_CHECKLIST.md
 
 # Development dependencies
 node_modules/
