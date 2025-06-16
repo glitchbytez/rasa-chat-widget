@@ -1,7 +1,7 @@
 {
-  "name": "@your-org/react-chat-widget",
+  "name": "@glitchbytez/rasa-chat-widget",
   "version": "1.0.0",
-  "description": "A customizable React chat widget component with Socket.IO integration",
+  "description": "A customizable React chat widget component with Rasa and Socket.IO integration",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
@@ -24,15 +24,15 @@
     "messaging",
     "component"
   ],
-  "author": "Your Name",
+  "author": "Glitchbytez",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-org/react-chat-widget.git"
+    "url": "https://github.com/glitchbytez/rasa-chat-widget.git"
   },
-  "homepage": "https://github.com/your-org/react-chat-widget#readme",
+  "homepage": "https://github.com/glitchbytez/rasa-chat-widget#readme",
   "bugs": {
-    "url": "https://github.com/your-org/react-chat-widget/issues"
+    "url": "https://github.com/glitchbytez/rasa-chat-widget/issues"
   },
   "peerDependencies": {
     "react": ">=16.8.0",

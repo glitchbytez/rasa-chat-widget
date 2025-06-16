@@ -3,7 +3,7 @@
 ## Installation
 
 ```bash
-npm install @your-org/react-chat-widget
+npm install @glitchbytez/rasa-chat-widget
 ```
 
 ## Basic Usage
@@ -14,7 +14,7 @@ The `ChatWidgetProvider` is a complete, standalone component that includes all n
 
 ```jsx
 import React from 'react';
-import { ChatWidgetProvider } from '@your-org/react-chat-widget';
+import { ChatWidgetProvider } from '@glitchbytez/rasa-chat-widget';
 
 function App() {
   const socketConfig = {
@@ -49,7 +49,7 @@ If you need more control or want to integrate with existing socket connections:
 
 ```jsx
 import React from 'react';
-import { SocketProvider, ChatWidget } from '@your-org/react-chat-widget';
+import { SocketProvider, ChatWidget } from '@glitchbytez/rasa-chat-widget';
 
 function App() {
   const socketConfig = {
@@ -104,7 +104,7 @@ const socketConfig = {
 If you already have a SocketProvider in your app:
 
 ```jsx
-import { ChatWidgetProvider } from '@your-org/react-chat-widget';
+import { ChatWidgetProvider } from '@glitchbytez/rasa-chat-widget';
 
 function MyComponent() {
   return (
@@ -121,7 +121,7 @@ function MyComponent() {
 You can also use the individual hooks for custom implementations:
 
 ```jsx
-import { useSendMessage, useSocket } from '@your-org/react-chat-widget';
+import { useSendMessage, useSocket } from '@glitchbytez/rasa-chat-widget';
 
 function CustomChatComponent() {
   const { sendMessage } = useSendMessage();
