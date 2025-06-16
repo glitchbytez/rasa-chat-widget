@@ -41,11 +41,9 @@ export default {
     postcss({
       extract: true,
       minimize: true,
-      use: [
-        ['sass', { 
-          includePaths: ['./src', './node_modules'] 
-        }]
-      ]
+      config: {
+        path: './postcss.config.js'
+      }
     }),
     terser()
   ]
