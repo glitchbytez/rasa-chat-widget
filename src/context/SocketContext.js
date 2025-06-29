@@ -203,7 +203,7 @@ export const SocketProvider = ({
             console.warn('Cannot connect to dashboard: Network is offline');
             useChatStore.getState().addMessage({
                 id: 'network-offline-dashboard-' + Date.now(),
-                role: 'system',
+                role: 'assistant',
                 content: 'Cannot connect to live agent while offline. Please check your internet connection.',
                 timestamp: new Date().toISOString(),
             });
