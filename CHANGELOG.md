@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.5] - 2024-12-22
+
+### 🔧 Bug Fixes
+- **Message Role Consistency**: Updated message roles from 'system' to 'assistant' for improved clarity in chat context
+- **Better Chat Flow**: Enhanced message role semantics for more intuitive conversation handling
+- **Improved Context**: Better differentiation between system messages and assistant responses
+
+### 📈 Technical Improvements
+- Standardized message role naming conventions throughout the chat widget
+- Enhanced message processing logic for better user experience
+
 ## [1.2.4] - 2024-12-22
 
 ### 🎨 UX Improvements

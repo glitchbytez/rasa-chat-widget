@@ -1,6 +1,6 @@
 {
   "name": "@glitchbytez/rasa-chat-widget",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "A customizable React chat widget component with Rasa and Socket.IO integration",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
