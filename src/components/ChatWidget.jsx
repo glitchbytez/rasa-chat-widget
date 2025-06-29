@@ -457,7 +457,7 @@ export default function ChatWidget() {
                                                                     </span>
                                                                 </div>
                                                             )}
-                                                            <div className="text-sm leading-relaxed whitespace-pre-wrap">
+                                                            <div className="text-sm leading-relaxed whitespace-pre-wrap message-text-content chat-widget-message-text">
                                                                 {msg.content}
                                                             </div>
                                                         </>

@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.2] - 2024-12-22
+
+### 🐛 Fixed
+- **Critical Text Truncation**: Fixed severe text truncation issue in chat bubbles where long content like email addresses were being cut off to just the last character(s)
+- **Message Text Rendering**: Added comprehensive CSS styles to prevent text overflow and ensure proper text rendering
+- **Cross-browser Compatibility**: Enhanced text display stability across different browsers and contexts
+- **Font Loading Issues**: Added explicit text rendering properties to prevent font-related display problems
+
+### 🎨 Styling Enhancements
+- Added `message-text-content` and `chat-widget-message-text` CSS classes for better text control
+- Implemented `!important` declarations to override any conflicting styles
+- Enhanced text overflow handling with explicit `text-overflow: clip` and `overflow: visible`
+- Improved white-space and word-break properties for better text wrapping
+
+### 🔧 Technical Improvements
+- Added backup CSS rules to prevent CSS conflicts from external stylesheets
+- Enhanced message bubble text container with forced display properties
+- Improved text rendering with explicit font-size, line-height, and color properties
+
 ## [1.2.1] - 2024-12-19
 
 ### 🐛 Fixed
