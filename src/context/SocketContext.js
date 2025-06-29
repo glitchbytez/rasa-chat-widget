@@ -793,7 +793,7 @@ export const SocketProvider = ({
 
                 // Add slight delay to ensure state updates
                 setTimeout(() => {
-                    connectToDashboard({agentName: currentState.agentName, userEmail: userEmail, userName: userName});
+                    connectToDashboard(currentState.agentName, userEmail, userName);
 
                     // Add handoff message to chat
                     if (botResponse.message || botResponse.text) {
