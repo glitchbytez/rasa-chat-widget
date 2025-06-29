@@ -197,7 +197,7 @@ const useChatStore = create(
                         feedbackSubmissionStatus: 'success',
                         messages: [...state.messages, {
                             id: Date.now().toString(),
-                            role: 'assistant',
+                            role: 'system',
                             content: 'Thank you for your feedback! Your chat session has ended.',
                             timestamp: new Date().toISOString(),
                         }]
@@ -362,8 +362,8 @@ const useChatStore = create(
                     chatEnded: true,
                     showFeedback: true, // Show feedback form when agent ends the conversation
                     messages: [...state.messages, {
-                        id: 'assistant-' + Date.now(),
-                        role: 'assistant',
+                        id: 'system-' + Date.now(),
+                        role: 'system',
                         content: 'The chat session has ended. We would appreciate your feedback on this conversation.',
                         timestamp: new Date().toISOString(),
                     }]
