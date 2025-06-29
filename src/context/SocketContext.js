@@ -184,7 +184,7 @@ export const SocketProvider = ({
         }
     }, [sessionId, isOnline, socketConfig, socket]);
 
-    const connectToDashboard = (agentName, userEmail) => {
+    const connectToDashboard = (agentName, userEmail, userName) => {
         // Skip if not in browser
         if (!isBrowser) {
             console.warn('Cannot connect to dashboard: Not in browser environment');
@@ -248,7 +248,8 @@ export const SocketProvider = ({
             dashboardSocketConnection.emit('register', {
                 role: 'user',
                 sessionId: currentState.sessionId,
-                userEmail: userEmail
+                userEmail: userEmail,
+                userName: userName
             });
 
             // Show a simple "Connected to live agent" message if there isn't already one
@@ -776,6 +777,9 @@ export const SocketProvider = ({
             if (botResponse.handoff === true) {
                 // user email
                 const userEmail = botResponse.userEmail ? botResponse.userEmail : null;
+
+                //user name
+                const userName = botResponse.userName ? botResponse.userName : null;
                 // Use getState() to get fresh values
                 const currentState = useChatStore.getState();
 
@@ -786,7 +790,7 @@ export const SocketProvider = ({
 
                 // Add slight delay to ensure state updates
                 setTimeout(() => {
-                    connectToDashboard(currentState.agentName, userEmail);
+                    connectToDashboard(currentState.agentName, userEmail, userName);
 
                     // Add handoff message to chat
                     if (botResponse.message || botResponse.text) {
