@@ -185,6 +185,9 @@ export const SocketProvider = ({
     }, [sessionId, isOnline, socketConfig, socket]);
 
     const connectToDashboard = (agentName, userEmail, userName) => {
+        // log details for debugging
+        console.log('Connecting to dashboard with agentName:', agentName, 'userEmail:', userEmail, 'userName:', userName);
+        
         // Skip if not in browser
         if (!isBrowser) {
             console.warn('Cannot connect to dashboard: Not in browser environment');
@@ -790,7 +793,7 @@ export const SocketProvider = ({
 
                 // Add slight delay to ensure state updates
                 setTimeout(() => {
-                    connectToDashboard(currentState.agentName, userEmail, userName);
+                    connectToDashboard({agentName: currentState.agentName, userEmail: userEmail, userName: userName});
 
                     // Add handoff message to chat
                     if (botResponse.message || botResponse.text) {
