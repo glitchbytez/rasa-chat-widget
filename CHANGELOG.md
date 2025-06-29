@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.4] - 2024-12-22
+
+### 🎨 UX Improvements
+- **Message Container Spacing**: Added top padding (`pt-6`) to the chat messages container to create visual separation from the widget header
+- **Better Scroll Experience**: Messages no longer appear to overlap with the header when scrolling, improving readability and visual hierarchy
+- **Enhanced Visual Clarity**: Improved spacing prevents messages from feeling cramped against the header area
+
+### 🔧 Technical Changes
+- Updated chat container padding from `p-3 sm:p-4` to `p-3 sm:p-4 pt-6` for better header separation
+
 ## [1.2.3] - 2024-12-22
 
 ### 🎨 Visual Improvements

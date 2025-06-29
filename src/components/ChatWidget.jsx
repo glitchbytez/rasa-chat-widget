@@ -418,7 +418,7 @@ export default function ChatWidget() {
 
                         {/* Chat Tab Content */}
                         {activeTab === "chat" && (
-                            <div className="flex-1 overflow-y-auto p-3 sm:p-4 custom-scrollbar bg-white">
+                            <div className="flex-1 overflow-y-auto p-3 sm:p-4 pt-6 custom-scrollbar bg-white">
                                 {messages.map((msg) => {
                                     const timestamp = msg.timestamp;
                                     const isUser = msg.role === 'user';
