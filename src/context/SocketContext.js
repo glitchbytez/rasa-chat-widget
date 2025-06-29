@@ -779,10 +779,10 @@ export const SocketProvider = ({
             // Enhanced handoff detection - checks multiple possible formats
             if (botResponse.handoff === true) {
                 // user email
-                const userEmail = botResponse.userEmail ? botResponse.userEmail : null;
+                const userEmail = botResponse.user_email ? botResponse.user_email : null;
 
                 //user name
-                const userName = botResponse.userName ? botResponse.userName : null;
+                const userName = botResponse.user_name ? botResponse.user_name : null;
                 // Use getState() to get fresh values
                 const currentState = useChatStore.getState();
 

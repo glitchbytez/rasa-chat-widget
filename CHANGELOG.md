@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.3] - 2024-12-22
+
+### 🎨 Visual Improvements
+- **Unified Bubble Colors**: Bot/assistant message bubbles now use the same blue color (`bg-blue-600`) as the widget header for visual consistency
+- **Enhanced Text Visibility**: Updated agent names and timestamps to use white text for optimal readability on blue background
+- **Improved Typing Indicator**: Typing indicator bubble and dots now match the unified blue color scheme
+- **Better UX**: Maintained visual distinction between user and bot messages through different border radius styles while using consistent branding colors
+
+### 🔧 Technical Changes
+- Updated message bubble background from `bg-gray-100` to `bg-blue-600` for bot messages
+- Changed agent name text from `text-blue-600` to `text-white` for visibility
+- Updated timestamp text from `text-gray-500` to `text-white/70` for subtle contrast
+- Modified typing indicator dots from `bg-gray-400` to `bg-white/80` for better visibility
+
 ## [1.2.2] - 2024-12-22
 
 ### 🐛 Fixed

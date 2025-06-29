@@ -441,7 +441,7 @@ export default function ChatWidget() {
                                                     className={`inline-block p-3 max-w-[75%] message-bubble chat-text ${
                                                         isUser 
                                                             ? 'bg-blue-600 text-white rounded-t-2xl rounded-bl-2xl rounded-br-md' 
-                                                            : 'bg-gray-100 text-gray-800 rounded-t-2xl rounded-br-2xl rounded-bl-md'
+                                                            : 'bg-blue-600 text-white rounded-t-2xl rounded-br-2xl rounded-bl-md'
                                                     }`}
                                                 >
                                                     {/* Text Messages */}
@@ -449,10 +449,10 @@ export default function ChatWidget() {
                                                         <>
                                                             {!isUser && (
                                                                 <div className="flex flex-wrap items-center mb-2 gap-x-2">
-                                                                    <span className="text-sm font-medium text-blue-600 whitespace-nowrap">
+                                                                    <span className="text-sm font-medium text-white whitespace-nowrap">
                                                                         {msg.role === 'system' ? 'Campus Assistant' : (isLiveChatActive ? agentName || 'Agent' : 'Campus Assistant')}
                                                                     </span>
-                                                                    <span className="text-xs text-gray-500 whitespace-nowrap">
+                                                                    <span className="text-xs text-white/70 whitespace-nowrap">
                                                                         {getTimeAgo(timestamp)}
                                                                     </span>
                                                                 </div>
@@ -468,10 +468,10 @@ export default function ChatWidget() {
                                                         <div className="flex flex-col">
                                                             {!isUser && (
                                                                 <div className="flex flex-wrap items-center mb-2 gap-x-2">
-                                                                    <span className="text-sm font-medium text-blue-600 whitespace-nowrap">
+                                                                    <span className="text-sm font-medium text-white whitespace-nowrap">
                                                                         {msg.role === 'system' ? 'Campus Assistant' : (isLiveChatActive ? agentName || 'Agent' : 'Campus Assistant')}
                                                                     </span>
-                                                                    <span className="text-xs text-gray-500 whitespace-nowrap">
+                                                                    <span className="text-xs text-white/70 whitespace-nowrap">
                                                                         {getTimeAgo(timestamp)}
                                                                     </span>
                                                                 </div>
@@ -490,10 +490,10 @@ export default function ChatWidget() {
                                                         <div className="flex flex-col">
                                                             {!isUser && (
                                                                 <div className="flex flex-wrap items-center mb-2 gap-x-2">
-                                                                    <span className="text-sm font-medium text-blue-600 whitespace-nowrap">
+                                                                    <span className="text-sm font-medium text-white whitespace-nowrap">
                                                                         {msg.role === 'system' ? 'Campus Assistant' : (isLiveChatActive ? agentName || 'Agent' : 'Campus Assistant')}
                                                                     </span>
-                                                                    <span className="text-xs text-gray-500 whitespace-nowrap">
+                                                                    <span className="text-xs text-white/70 whitespace-nowrap">
                                                                         {getTimeAgo(timestamp)}
                                                                     </span>
                                                                 </div>
@@ -517,10 +517,10 @@ export default function ChatWidget() {
                                                         <div className="flex flex-col">
                                                             {!isUser && (
                                                                 <div className="flex flex-wrap items-center mb-2 gap-x-2">
-                                                                    <span className="text-sm font-medium text-blue-600 whitespace-nowrap">
+                                                                    <span className="text-sm font-medium text-white whitespace-nowrap">
                                                                         {msg.role === 'system' ? 'Campus Assistant' : (isLiveChatActive ? agentName || 'Agent' : 'Campus Assistant')}
                                                                     </span>
-                                                                    <span className="text-xs text-gray-500 whitespace-nowrap">
+                                                                    <span className="text-xs text-white/70 whitespace-nowrap">
                                                                         {getTimeAgo(timestamp)}
                                                                     </span>
                                                                 </div>
@@ -540,19 +540,19 @@ export default function ChatWidget() {
                                 {(isLoading || isTyping) && !chatEnded && !showFeedback && !showConfirmation && (
                                     <div className="mb-4 mr-8 message-container">
                                         <div className="flex justify-start">
-                                            <div className="inline-block bg-gray-100 text-gray-800 rounded-t-2xl rounded-br-2xl rounded-bl-md p-3 max-w-[75%] message-bubble chat-text">
+                                            <div className="inline-block bg-blue-600 text-white rounded-t-2xl rounded-br-2xl rounded-bl-md p-3 max-w-[75%] message-bubble chat-text">
                                                 <div className="flex flex-wrap items-center mb-2 gap-x-2">
-                                                    <span className="text-sm font-medium text-blue-600 whitespace-nowrap">
+                                                    <span className="text-sm font-medium text-white whitespace-nowrap">
                                                         {isLiveChatActive ? agentName || 'Agent' : 'Campus Assistant'}
                                                     </span>
-                                                    <span className="text-xs text-gray-500 whitespace-nowrap">
+                                                    <span className="text-xs text-white/70 whitespace-nowrap">
                                                         typing...
                                                     </span>
                                                 </div>
                                                 <div className="flex space-x-2">
-                                                    <div className="h-2 w-2 bg-gray-400 rounded-full typing-dot animate-bounce" style={{ animationDelay: '0ms' }} />
-                                                    <div className="h-2 w-2 bg-gray-400 rounded-full typing-dot animate-bounce" style={{ animationDelay: '150ms' }} />
-                                                    <div className="h-2 w-2 bg-gray-400 rounded-full typing-dot animate-bounce" style={{ animationDelay: '300ms' }} />
+                                                    <div className="h-2 w-2 bg-white/80 rounded-full typing-dot animate-bounce" style={{ animationDelay: '0ms' }} />
+                                                    <div className="h-2 w-2 bg-white/80 rounded-full typing-dot animate-bounce" style={{ animationDelay: '150ms' }} />
+                                                    <div className="h-2 w-2 bg-white/80 rounded-full typing-dot animate-bounce" style={{ animationDelay: '300ms' }} />
                                                 </div>
                                             </div>
                                         </div>
