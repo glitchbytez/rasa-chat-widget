@@ -427,7 +427,7 @@ export default function ChatWidget() {
                                     if (isSystem) {
                                         return (
                                             <div key={msg.id} className="flex justify-center my-2">
-                                                <div className="bg-gray-100 text-gray-600 text-xs px-3 py-1.5 rounded-full">
+                                                <div className="bg-gray-100 text-gray-600 text-xs px-3 py-1.5 rounded-full max-w-xs text-center">
                                                     {msg.content}
                                                 </div>
                                             </div>
@@ -435,21 +435,21 @@ export default function ChatWidget() {
                                     }
 
                                     return (
-                                        <div key={msg.id} className={`flex flex-col ${isUser ? 'items-end' : 'items-start'} mb-4`}>
-                                            {/* We're removing the sender name from outside the bubble */}
-
-                                            {/* Message content */}
-                                            <div className="flex">
+                                        <div key={msg.id} className={`mb-4 message-container ${isUser ? 'ml-8' : 'mr-8'}`}>
+                                            <div className={`flex ${isUser ? 'justify-end' : 'justify-start'}`}>
                                                 <div
-                                                    className={`p-3 max-w-[85%] ${isUser ? 'bg-blue-600 text-white rounded-t-2xl rounded-bl-2xl' : 'bg-gray-100 text-gray-800 rounded-t-2xl rounded-br-2xl'}`}
-                                                    style={{ minWidth: !isUser ? '200px' : 'auto' }}
+                                                    className={`inline-block p-3 max-w-[75%] message-bubble chat-text ${
+                                                        isUser 
+                                                            ? 'bg-blue-600 text-white rounded-t-2xl rounded-bl-2xl rounded-br-md' 
+                                                            : 'bg-gray-100 text-gray-800 rounded-t-2xl rounded-br-2xl rounded-bl-md'
+                                                    }`}
                                                 >
                                                     {/* Text Messages */}
                                                     {msg.type === 'text' && (
                                                         <>
                                                             {!isUser && (
-                                                                <div className="flex flex-wrap items-center mb-1">
-                                                                    <span className="text-sm font-medium text-blue-600 whitespace-nowrap mr-2">
+                                                                <div className="flex flex-wrap items-center mb-2 gap-x-2">
+                                                                    <span className="text-sm font-medium text-blue-600 whitespace-nowrap">
                                                                         {msg.role === 'system' ? 'Campus Assistant' : (isLiveChatActive ? agentName || 'Agent' : 'Campus Assistant')}
                                                                     </span>
                                                                     <span className="text-xs text-gray-500 whitespace-nowrap">
@@ -457,39 +457,78 @@ export default function ChatWidget() {
                                                                     </span>
                                                                 </div>
                                                             )}
-                                                            <p className="text-sm">{msg.content}</p>
+                                                            <div className="text-sm leading-relaxed whitespace-pre-wrap">
+                                                                {msg.content}
+                                                            </div>
                                                         </>
                                                     )}
 
                                                     {/* Image Messages */}
                                                     {msg.type === 'image' && (
-                                                        <img
-                                                            src={msg.content}
-                                                            alt="Bot response"
-                                                            className="rounded-lg max-w-[200px]"
-                                                        />
+                                                        <div className="flex flex-col">
+                                                            {!isUser && (
+                                                                <div className="flex flex-wrap items-center mb-2 gap-x-2">
+                                                                    <span className="text-sm font-medium text-blue-600 whitespace-nowrap">
+                                                                        {msg.role === 'system' ? 'Campus Assistant' : (isLiveChatActive ? agentName || 'Agent' : 'Campus Assistant')}
+                                                                    </span>
+                                                                    <span className="text-xs text-gray-500 whitespace-nowrap">
+                                                                        {getTimeAgo(timestamp)}
+                                                                    </span>
+                                                                </div>
+                                                            )}
+                                                            <img
+                                                                src={msg.content}
+                                                                alt="Bot response"
+                                                                className="rounded-lg max-w-full h-auto"
+                                                                style={{ maxWidth: '250px' }}
+                                                            />
+                                                        </div>
                                                     )}
 
                                                     {/* Buttons */}
                                                     {msg.type === 'buttons' && msg.payload && (
-                                                        <div className="flex flex-wrap gap-2 mt-3">
-                                                            {msg.payload.map((button, idx) => (
-                                                                <button
-                                                                    key={`btn-${idx}-${button.title}`}
-                                                                    onClick={() => sendMessage(button.payload)}
-                                                                    className="px-3 py-1 text-xs bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors"
-                                                                >
-                                                                    {button.title}
-                                                                </button>
-                                                            ))}
+                                                        <div className="flex flex-col">
+                                                            {!isUser && (
+                                                                <div className="flex flex-wrap items-center mb-2 gap-x-2">
+                                                                    <span className="text-sm font-medium text-blue-600 whitespace-nowrap">
+                                                                        {msg.role === 'system' ? 'Campus Assistant' : (isLiveChatActive ? agentName || 'Agent' : 'Campus Assistant')}
+                                                                    </span>
+                                                                    <span className="text-xs text-gray-500 whitespace-nowrap">
+                                                                        {getTimeAgo(timestamp)}
+                                                                    </span>
+                                                                </div>
+                                                            )}
+                                                            <div className="flex flex-wrap gap-2 mt-1">
+                                                                {msg.payload.map((button, idx) => (
+                                                                    <button
+                                                                        key={`btn-${idx}-${button.title}`}
+                                                                        onClick={() => sendMessage(button.payload)}
+                                                                        className="px-3 py-1.5 text-xs bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors inline-block"
+                                                                    >
+                                                                        {button.title}
+                                                                    </button>
+                                                                ))}
+                                                            </div>
                                                         </div>
                                                     )}
 
                                                     {/* Custom Payload */}
                                                     {msg.type === 'custom' && (
-                                                        <pre className="bg-gray-200 text-gray-700 p-2 rounded-md text-xs mt-2 overflow-x-auto">
-                                                            {JSON.stringify(msg.payload, null, 2)}
-                                                        </pre>
+                                                        <div className="flex flex-col">
+                                                            {!isUser && (
+                                                                <div className="flex flex-wrap items-center mb-2 gap-x-2">
+                                                                    <span className="text-sm font-medium text-blue-600 whitespace-nowrap">
+                                                                        {msg.role === 'system' ? 'Campus Assistant' : (isLiveChatActive ? agentName || 'Agent' : 'Campus Assistant')}
+                                                                    </span>
+                                                                    <span className="text-xs text-gray-500 whitespace-nowrap">
+                                                                        {getTimeAgo(timestamp)}
+                                                                    </span>
+                                                                </div>
+                                                            )}
+                                                            <pre className="bg-gray-200 text-gray-700 p-2 rounded-md text-xs mt-1 overflow-x-auto max-w-full">
+                                                                {JSON.stringify(msg.payload, null, 2)}
+                                                            </pre>
+                                                        </div>
                                                     )}
                                                 </div>
                                             </div>
@@ -499,16 +538,15 @@ export default function ChatWidget() {
 
                                 {/* Loading Typing Indicator || isTyping - Only show when chat is active */}
                                 {(isLoading || isTyping) && !chatEnded && !showFeedback && !showConfirmation && (
-                                    <div className="flex flex-col items-start mb-4">
-                                        {/* Removed agent name header for typing indicator */}
-                                        <div className="flex">
-                                            <div className="bg-gray-100 text-gray-800 rounded-t-2xl rounded-br-2xl p-3 max-w-[85%]" style={{ minWidth: '200px' }}>
-                                                <div className="flex flex-wrap items-center mb-1">
-                                                    <span className="text-sm font-medium text-blue-600 whitespace-nowrap mr-2">
-                                                        {isLiveChatActive ? agentName || 'Romeo' : 'Campus Assistant'}
+                                    <div className="mb-4 mr-8 message-container">
+                                        <div className="flex justify-start">
+                                            <div className="inline-block bg-gray-100 text-gray-800 rounded-t-2xl rounded-br-2xl rounded-bl-md p-3 max-w-[75%] message-bubble chat-text">
+                                                <div className="flex flex-wrap items-center mb-2 gap-x-2">
+                                                    <span className="text-sm font-medium text-blue-600 whitespace-nowrap">
+                                                        {isLiveChatActive ? agentName || 'Agent' : 'Campus Assistant'}
                                                     </span>
                                                     <span className="text-xs text-gray-500 whitespace-nowrap">
-                                                        • Just now
+                                                        typing...
                                                     </span>
                                                 </div>
                                                 <div className="flex space-x-2">

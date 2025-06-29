@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.1] - 2024-12-19
+
+### 🐛 Fixed
+- **Message Bubble Rendering**: Completely redesigned message bubble layout system
+  - Fixed message bubbles not rendering properly
+  - Resolved message overlapping and cut-off issues  
+  - Fixed centering problems - bubbles now properly align left (bot) and right (user)
+  - Improved responsive behavior on different screen sizes
+  - Enhanced text wrapping and overflow handling
+
+### 🎨 Layout Improvements
+- Simplified flex container structure for better reliability
+- Changed from complex nested flex to cleaner margin-based positioning
+- Reduced max-width from 85% to 75% for better readability
+- Added proper margin spacing (ml-8/mr-8) to prevent edge-to-edge bubbles
+
+### ✨ Styling Enhancements
+- Added custom CSS utilities for word breaking and text rendering
+- Improved border radius for more consistent bubble appearance
+- Enhanced spacing between message elements
+- Better visual hierarchy with improved typography
+- Smoother text rendering with antialiasing
+
 ## [1.2.0] - 2024-01-XX
 
 ### 🚀 Major Developer Experience Improvement

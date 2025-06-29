@@ -52,3 +52,26 @@
 .typing-dot:nth-child(3) {
   animation-delay: 0.4s;
 }
+
+/* Message bubble improvements */
+@layer utilities {
+  /* Ensure message bubbles don't overflow their containers */
+  .message-bubble {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+  
+  /* Prevent flex shrinking issues */
+  .message-container {
+    min-width: 0;
+    flex-shrink: 1;
+  }
+  
+  /* Smooth text rendering */
+  .chat-text {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
