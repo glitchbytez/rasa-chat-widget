@@ -1,12 +1,21 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 
+// Default welcome message from the assistant
+const getDefaultWelcomeMessage = () => ({
+    id: 'welcome-' + Date.now(),
+    role: 'assistant',
+    content: 'Hi!\n\nI\'m an AI assistant trained on documentation, help articles, and other content.\n\nAsk me anything about UZ IT and Admin.',
+    timestamp: new Date().toISOString(),
+    type: 'text'
+});
+
 const useChatStore = create(
     persist(
-        (set) => ({
+        (set, get) => ({
             socket: null,
             sessionId: null,
-            messages: [],
+            messages: [getDefaultWelcomeMessage()],
             isLoading: false,
             isTyping: false,
             dashboardSocket: null,
@@ -332,7 +341,7 @@ const useChatStore = create(
 
             startNewChat: () => set((state) => {
                 return {
-                    messages: [],
+                    messages: [getDefaultWelcomeMessage()],
                     isLiveChatActive: false,
                     agentName: null,
                     isLoading: false,
@@ -387,6 +396,12 @@ const useChatStore = create(
                 connectionErrorShown: state.connectionErrorShown, // Persist connection error shown flag
                 dashboardConnectionErrorShown: state.dashboardConnectionErrorShown, // Persist dashboard connection error shown flag
             }),
+            onRehydrateStorage: () => (state) => {
+                // Initialize with welcome message if no messages exist
+                if (state && state.messages && state.messages.length === 0) {
+                    state.messages = [getDefaultWelcomeMessage()];
+                }
+            },
         }
     )
 );
