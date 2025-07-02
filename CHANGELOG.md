@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.6] - 2024-12-29
+
+### 📦 Published
+- Successfully published version 1.2.6 to npm
+- Package now available for installation via `npm install @glitchbytez/rasa-chat-widget`
+- All previous improvements from v1.2.0-1.2.5 are included
+
 ## [1.2.5] - 2024-12-22
 
 ### 🔧 Bug Fixes
